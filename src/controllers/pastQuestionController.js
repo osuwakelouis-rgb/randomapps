@@ -33,7 +33,7 @@ export const getPastQuestions = (req, res) => {
   } catch (err) {
     return res.status(500).json({ message: "Error loading department data" });
   }
-
+  console.log("the details", department, level, course, year);
   if (
     !questionsData[department] ||
     !questionsData[department][level] ||
