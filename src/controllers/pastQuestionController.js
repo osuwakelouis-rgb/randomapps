@@ -37,8 +37,8 @@ export const getPastQuestions = (req, res) => {
   if (
     !questionsData[department] ||
     !questionsData[department][level] ||
-    !questionsData[department][level][course] ||
-    !questionsData[department][level][course][year]
+    !questionsData[department][level][course.toUpperCase()] ||
+    !questionsData[department][level][course.toUpperCase()][year]
   ) {
     return res.status(404).json({ message: "Past questions not found" });
   }
